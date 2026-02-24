@@ -16,7 +16,7 @@ Dado que acessei a tela de login
 E preencho o campo de email incorretamente
 E preencho o campo de senha
 Quando clico no botão de login
-Então devo ser exibido um toast de credenciais inválidas
+Então deve ser exibido um toast de credenciais inválidas
 
 @login @critical
 Cenário: Logar na aplicação com senha incorreta
@@ -24,14 +24,14 @@ Dado que acessei a tela de login
 E preencho o campo de email
 E preencho o campo de senha incorretamente
 Quando clico no botão de login
-Então devo ser exibido um toast de credenciais inválidas
+Então deve ser exibido um toast de credenciais inválidas
 
 @login @critical
-Cenário: Logar na aplicação sem preenchimento de campos
+Cenário: Logar na aplicação sem preencher campos
 Dado que acessei a tela de login
-E mantenho os campos de email e senha vazios
+E mantenho os campos vazios
 Quando clico no botão de login
-Então devo ser exibido mensagens de erro indicando os campos
+Então deve ser exibido mensagens de erro indicando os campos
 
 @login @critical
 Cenário: Redirecionamento para tela de cadastro

@@ -16,9 +16,9 @@ CadastroElementsMap = {
   errorNameMessage: '//p[normalize-space()="Nome deve ter pelo menos 2 caracteres"]',
   errorEmailMessage: '//p[normalize-space()="Email inválido"]',
   errorPasswordMessage: '//p[normalize-space()="Senha deve ter pelo menos 6 caracteres"]',
-  errorPasswordConfirm: '//p[normalize-space()="As senhas não coincidem")]',
+  errorPasswordConfirm: '//p[normalize-space()="As senhas não coincidem"]',
   successMessage: '//div[text()="Conta criada!"]',
   
   // Headers and titles
-  loginTitle: '//h3[contains(text(), "CRIA CONTA")]',
+  signUpTitle: '//h3[contains(text(), "CRIA CONTA")]',
 } as const;

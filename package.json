@@ -12,7 +12,8 @@
     "test:all": "npm run clean:reports && npx bddgen && npx playwright test && npm run allure:open",
     "test:critical": "npx bddgen && npm run clean:reports && npx playwright test --grep /@critical/ && npm run allure:open",
     "test:smoke": "npx bddgen && npm run clean:reports && npx playwright test --grep /@smoke/ && npm run allure:open",
-    "test:regression": "npx bddgen && npm run clean:reports && npx playwright test --grep /@regression/ && npm run allure:open"
+    "test:regression": "npx bddgen && npm run clean:reports && npx playwright test --grep /@regression/ && npm run allure:open",
+    "test:cadastro": "npx bddgen && npm run clean:reports && npx playwright test --grep /@cadastro/ && npm run allure:open"
   },
   "dependencies": {
     "@cucumber/cucumber": "^12.6.0",

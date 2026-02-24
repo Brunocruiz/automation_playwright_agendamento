@@ -46,11 +46,11 @@ When("preencho o campo de email incorretamente", async ({ page }: StepContext) =
 
 When("preencho o campo de senha incorretamente", async ({ page }: StepContext) => {
     console.log('➡️ Realizando preenchimento de campo...');
-    await fill(page, LoginElementsMap.passwordInput, 'teste12345');
+    await fill(page, LoginElementsMap.passwordInput, 'teste123');
     console.log('✅ Preenchimento de campo realizado com sucesso!\n');
 });
 
-When("mantenho os campos de email e senha vazios", async ({ page }: StepContext) => {
+When("mantenho os campos vazios", async ({ page }: StepContext) => {
     console.log('➡️ Realizando espera de ação...');
     console.log('✅ Realizado com sucesso!\n');
 });
@@ -68,13 +68,13 @@ Then("devo ser redirecionado para o dashboard", async ({ page }: StepContext) =>
     console.log('✅ Elementos encontrados com sucesso!\n');
 });
 
-Then("devo ser exibido um toast de credenciais inválidas", async ({ page }: StepContext) => {
+Then("deve ser exibido um toast de credenciais inválidas", async ({ page }: StepContext) => {
     console.log('➡️ Realizando rastreio de elementos...');
     await waitForSelector(page, LoginElementsMap.errorCredentialsMessage);
     console.log('✅ Elementos encontrados com sucesso!\n');
 });
 
-Then("devo ser exibido mensagens de erro indicando os campos", async ({ page }: StepContext) => {
+Then("deve ser exibido mensagens de erro indicando os campos", async ({ page }: StepContext) => {
     console.log('➡️ Realizando rastreio de elementos...');
     await waitForSelector(page, LoginElementsMap.errorEmailMessage);
     await waitForSelector(page, LoginElementsMap.errorPasswordMessage);
@@ -87,6 +87,7 @@ Then("devo ser redirecionado para a tela de cadastro", async ({ page }: StepCont
     await page.waitForLoadState('domcontentloaded');
 
     //Campos e elementos tela de cadastro
+    await waitForSelector(page, CadastroElementsMap.signUpTitle);
     await waitForSelector(page, CadastroElementsMap.nameInput);
     await waitForSelector(page, CadastroElementsMap.emailInput);
     await waitForSelector(page, CadastroElementsMap.passwordInput);

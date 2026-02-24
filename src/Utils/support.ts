@@ -454,3 +454,13 @@ export async function restoreSessionState(page: Page, storageStatePath: string) 
 }
 
 
+/**
+ * Gera um e-mail aleatório para fins de automação.
+ * @param prefix - Opcional: Um prefixo para identificar o tipo de teste (ex: 'admin', 'user').
+ * @returns Uma string de e-mail única.
+ */
+export const generateRandomEmail = (prefix: string = 'test'): string => {
+  const randomString = Math.random().toString(36).substring(2, 6);
+  
+  return `${prefix}_${randomString}@automation.com`;
+};
