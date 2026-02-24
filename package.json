@@ -1,0 +1,32 @@
+{
+  "name": "Agenda PRO",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "npx bddgen && npx playwright test",
+    "clean:reports": "rimraf Reports/* --glob",
+    "allure:clean": "rimraf Reports/allure-results && rimraf Reports/allure-report",
+    "allure:generate": "allure generate --single-file Reports/allure-results --clean -o Reports/allure-report",
+    "allure:report": "allure open Reports/allure-report",
+    "allure:open": "npm run allure:generate && npm run allure:report",
+    "test:all": "npm run clean:reports && npx bddgen && npx playwright test && npm run allure:open",
+    "test:critical": "npx bddgen && npm run clean:reports && npx playwright test --grep /@critical/ && npm run allure:open",
+    "test:smoke": "npx bddgen && npm run clean:reports && npx playwright test --grep /@smoke/ && npm run allure:open",
+    "test:regression": "npx bddgen && npm run clean:reports && npx playwright test --grep /@regression/ && npm run allure:open"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^11.2.0",
+    "playwright": "^1.54.1",
+    "pngjs": "^7.0.0"
+  },
+  "devDependencies": {
+    "@cucumber/tag-expressions": "^6.2.0",
+    "@playwright/test": "^1.54.2",
+    "@types/node": "^24.1.0",
+    "allure-commandline": "^2.34.1",
+    "allure-playwright": "^3.3.2",
+    "dotenv": "^17.2.1",
+    "playwright-bdd": "^8.3.1",
+    "rimraf": "^6.0.1"
+  }
+}
