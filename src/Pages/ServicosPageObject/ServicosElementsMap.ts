@@ -10,7 +10,7 @@ ServicosElementsMap = {
   Pedicure: '//div[h3[text()="Pedicure"]]',
   
   // Buttons
-  agendarButton: '//button[text()="Agendar"]',
+  agendarButton: '(//button[text()="Agendar"])[2]',
   
   // Headers and titles
   servicosTitle: '//h1[contains(., "NOSSOS SERVIÇOS")]',

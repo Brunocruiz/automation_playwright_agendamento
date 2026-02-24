@@ -14,6 +14,7 @@ AgendamentoElementsMap = {
   dataButton: '(//button[contains(@class, "bg-muted/50")])[6]',
   horarioButton: '//button[text()="11:00"]',
   confirmarAgendamentoButton: '//button[contains(., "Confirmar Agendamento")]',
+  confirmarAgendamentoDisableButton: '//button[contains(., "Confirmar Agendamento") and @disabled]',
 
   // Messages
   agendamentoSuccess: '//div[text()="Agendamento criado!"]',

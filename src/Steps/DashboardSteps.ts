@@ -36,31 +36,6 @@ When("clico no botão de novo agendamento", async ({ page }: StepContext) => {
     console.log('✅ Click realizado com sucesso!\n');
 });
 
-When("seleciono um serviço", async ({ page }: StepContext) => {
-    console.log('➡️ Realizando click...');
-    await click(page, AgendamentoElementsMap.servicoSelectButton);
-    await click(page, AgendamentoElementsMap.servicoCorteButton);
-    console.log('✅ Click realizado com sucesso!\n');
-});
-
-When("seleciono uma data", async ({ page }: StepContext) => {
-    console.log('➡️ Realizando click...');
-    await click(page, AgendamentoElementsMap.dataButton);
-    console.log('✅ Click realizado com sucesso!\n');
-});
-
-When("seleciono um horário", async ({ page }: StepContext) => {
-    console.log('➡️ Realizando click...');
-    await click(page, AgendamentoElementsMap.horarioButton);
-    console.log('✅ Click realizado com sucesso!\n');
-});
-
-When("clico no botão de confirmação de agendamento", async ({ page }: StepContext) => {
-    console.log('➡️ Realizando click...');
-    await click(page, AgendamentoElementsMap.confirmarAgendamentoButton);
-    console.log('✅ Click realizado com sucesso!\n');
-});
-
 When("clico no botão ver todos", async ({ page }: StepContext) => {
     console.log('➡️ Realizando click...');
     await click(page, DashboardElementsMap.verTodosButton);
@@ -83,12 +58,6 @@ When("clico no botão sair no menu lateral", async ({ page }: StepContext) => {
     console.log('➡️ Realizando click...');
     await click(page, DashboardElementsMap.sairButton);
     console.log('✅ Click realizado com sucesso!\n');
-});
-
-Then("deve ser exibido o toast de sucesso no agendamento", async ({ page }: StepContext) => {
-    console.log('➡️ Realizando rastreio de elementos...');
-    await waitForSelector(page, AgendamentoElementsMap.agendamentoSuccess);
-    console.log('✅ Elementos encontrados com sucesso!\n');
 });
 
 Then("devo ser redirecionado para a tela de agendamentos", async ({ page }: StepContext) => {
