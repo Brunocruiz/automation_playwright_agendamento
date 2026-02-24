@@ -1,5 +1,6 @@
 import { defineConfig, devices, PlaywrightTestConfig } from '@playwright/test';
 import { defineBddConfig } from 'playwright-bdd';
+import { envConfig } from './src/Utils/environment';
 import * as fs from 'fs';
 
 // Log da configuração do ambiente
@@ -162,8 +163,9 @@ const config: PlaywrightTestConfig = defineConfig({
       args: ['--start-maximized'],
     },
   },
-
-  projects: getSelectedProjects(),
+    globalSetup: './tools/global-setup.ts',
+    globalTeardown: './tools/global-teardown.ts',
+    projects: getSelectedProjects(),
 });
 
 export default config;

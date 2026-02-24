@@ -10,6 +10,6 @@
     "rootDir": ".",
     "skipLibCheck": true
   },
-  "include": ["Steps/**/*.ts", "Features/**/*.ts", "playwright.config.ts"],
+  "include": ["src/Steps/**/*.ts", "Features/**/*.ts", "playwright.config.ts"],
   "exclude": ["node_modules"]
 }
