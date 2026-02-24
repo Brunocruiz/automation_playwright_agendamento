@@ -1,34 +1,22 @@
 export const 
 LoginElementsMap = {
   // Input fields
-  usernameInput: '[data-testid="username-input"]',
-  passwordInput: '[data-testid="password-input"]',
-  emailInput: '[data-testid="email-input"]',
+  emailInput: '//*[@id="email"]',
+  passwordInput: '//*[@id="password"]',
   
   // Buttons
-  loginButton: '[data-testid="login-button"]',
-  submitButton: '[data-testid="submit-button"]',
-  forgotPasswordButton: '[data-testid="forgot-password-button"]',
-  signUpButton: '[data-testid="signup-button"]',
+  loginButton: '//button[@type="submit" and contains(., "Entrar")]',
   
   // Links
-  forgotPasswordLink: '[data-testid="forgot-password-link"]',
-  signUpLink: '[data-testid="signup-link"]',
+  signUpLink: '//a[@href="/register"]',
   
   // Messages
-  errorMessage: '[data-testid="error-message"]',
-  successMessage: '[data-testid="success-message"]',
-  validationMessage: '[data-testid="validation-message"]',
-  
-  // Form elements
-  loginForm: '[data-testid="login-form"]',
-  rememberMeCheckbox: '[data-testid="remember-me-checkbox"]',
+  errorEmailMessage: '//p[normalize-space()="Email inválido"]',
+  errorPasswordMessage: '//p[normalize-space()="Senha deve ter pelo menos 6 caracteres"]',
+  errorCredentialsMessage: '//div[contains(text(), "Credenciais inválidas")]',
+  successMessage: '//div[contains(text(), "Login realizado com sucesso")]',
   
   // Headers and titles
-  loginTitle: '[data-testid="login-title"]',
-  welcomeMessage: '[data-testid="welcome-message"]',
-  
-  // Loading states
-  loadingSpinner: '[data-testid="loading-spinner"]',
-  submitLoader: '[data-testid="submit-loader"]'
+  loginTitle: '//h3[contains(text(), "ENTRAR")]',
+  welcomeMessage: '//h1[contains(text(), "BEM-VINDO")]',
 } as const;
