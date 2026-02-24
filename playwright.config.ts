@@ -118,7 +118,7 @@ function getSelectedProjects() {
 
 const testDir: string = defineBddConfig({
   paths: ['Features/*.feature'],
-  require: ['Steps/*.ts', 'Hooks/*.ts'],
+  require: ['src/Steps/*.ts', 'Hooks/*.ts'],
 });
 
 const config: PlaywrightTestConfig = defineConfig({

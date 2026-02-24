@@ -229,7 +229,7 @@ async function doLoginPerfil() {
 
   const context = await browser.newContext({
     ...contextOptions,
-    viewport: { width: 1920, height: 1080 },
+    viewport: { width: 1280, height: 720 },
     userAgent: envConfig.isCI 
       ? 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
       : undefined
@@ -247,29 +247,10 @@ async function doLoginPerfil() {
     await page.fill('#email', email);
     await page.fill('#password', senha);
     await page.click("//button[@type='submit']");
-    
-    // Aguardar seleção de perfil com timeout baseado no ambiente
-    const profileTimeout = envConfig.isCI ? 45000 : 25000;
-    await page.waitForSelector(`text=Quem está assistindo?`, { 
-      timeout: profileTimeout 
-    });
 
-    // Salvar sessão de usuário
-    await persistSessionState(
-      context, 
-      page, 
-      dominioLogin, 
-      env.sessionUserFilePath, 
-      'usuário autenticado (sem perfil)'
-    );
-
-    // Selecionar perfil (primeiro perfil disponível)
-    await page.click("//div[@class='profile-image']/..");
-    await page.waitForTimeout(2000);
-
-    // Aguardar home com validação
+    // Aguardar dashboard com validação
     const dominioBase = new URL(dominioLogin).origin;
-    const homeUrl = `${dominioBase}/home`;
+    const homeUrl = `${dominioBase}/dashboard`;
     
     console.log(`🏠 Aguardando redirect para: ${homeUrl}`);
     await page.waitForURL(homeUrl, { 
@@ -283,7 +264,7 @@ async function doLoginPerfil() {
     console.log(`✅ Login confirmado:`);
     console.log(`   Título: ${pageTitle}`);
     console.log(`   URL: ${currentUrl}`);
-    console.log(`   Status: ${currentUrl.includes('/home') ? 'Sucesso' : 'Possível problema'}`);
+    console.log(`   Status: ${currentUrl.includes('/dashboard') ? 'Sucesso' : 'Possível problema'}`);
 
     // Salvar sessão com perfil
     await persistSessionState(
@@ -291,7 +272,7 @@ async function doLoginPerfil() {
       page, 
       dominioBase, 
       env.sessionProfileFilePath, 
-      'usuário autenticado com perfil'
+      'usuário autenticado'
     );
 
     // Verificação final da sessão salva
