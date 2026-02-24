@@ -163,8 +163,8 @@ const config: PlaywrightTestConfig = defineConfig({
       args: ['--start-maximized'],
     },
   },
-    globalSetup: './tools/global-setup.ts',
-    globalTeardown: './tools/global-teardown.ts',
+    globalSetup: './src/Utils/global-setup.ts',
+    globalTeardown: './src/Utils/global-teardown.ts',
     projects: getSelectedProjects(),
 });
 
