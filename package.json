@@ -13,8 +13,11 @@
     "test:critical": "npx bddgen && npm run clean:reports && npx playwright test --grep /@critical/ && npm run allure:open",
     "test:smoke": "npx bddgen && npm run clean:reports && npx playwright test --grep /@smoke/ && npm run allure:open",
     "test:regression": "npx bddgen && npm run clean:reports && npx playwright test --grep /@regression/ && npm run allure:open",
+    "test:login": "npx bddgen && npm run clean:reports && npx playwright test --grep /@login/ && npm run allure:open",
     "test:cadastro": "npx bddgen && npm run clean:reports && npx playwright test --grep /@cadastro/ && npm run allure:open",
-    "test:dashboard": "npx bddgen && npm run clean:reports && npx playwright test --grep /@dashboard/ && npm run allure:open"
+    "test:dashboard": "npx bddgen && npm run clean:reports && npx playwright test --grep /@dashboard/ && npm run allure:open",
+    "test:servicos": "npx bddgen && npm run clean:reports && npx playwright test --grep /@servicos/ && npm run allure:open",
+    "test:agendamentos": "npx bddgen && npm run clean:reports && npx playwright test --grep /@agendamentos/ && npm run allure:open"
   },
   "dependencies": {
     "@cucumber/cucumber": "^12.6.0",
