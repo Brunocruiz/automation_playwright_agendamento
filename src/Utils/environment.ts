@@ -1,6 +1,6 @@
 import * as dotenv from 'dotenv';
 
-if (!process.env.CI && !process.env.GITLAB_CI) {
+if (!process.env.CI) {
   dotenv.config();
 }
 

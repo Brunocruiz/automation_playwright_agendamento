@@ -10,7 +10,8 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     
-    # Mapeando as variáveis para todo o Job
+    environment: prod
+
     env:
       AMBIENTE: ${{ vars.AMBIENTE }}
       PROD_DOMINIO: ${{ vars.PROD_DOMINIO }}
