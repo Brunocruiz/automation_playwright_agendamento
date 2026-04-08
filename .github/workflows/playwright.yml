@@ -9,12 +9,22 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    
+    # Mapeando as variáveis para todo o Job
+    env:
+      AMBIENTE: ${{ vars.AMBIENTE }}
+      PROD_DOMINIO: ${{ vars.PROD_DOMINIO }}
+      PROD_DOMINIO_LOGIN: ${{ vars.PROD_DOMINIO_LOGIN }}
+      PROD_EMAIL: ${{ vars.PROD_EMAIL }}
+      PROD_SENHA: ${{ vars.PROD_SENHA }}
+
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
