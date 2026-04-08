@@ -193,7 +193,8 @@ async function doLoginPerfil() {
   // Configurar browser baseado no ambiente
   const browserOptions: any = {
     headless: envConfig.headless,
-    ignoreDefaultArgs: ['--disable-extensions']
+    ignoreDefaultArgs: ['--disable-extensions'],
+    args: []
   };
 
   // Configurações específicas por ambiente
