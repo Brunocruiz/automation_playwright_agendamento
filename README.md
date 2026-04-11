@@ -1,64 +1,61 @@
 # 🎭 Playwright Automation Framework (TypeScript + BDD)
 
-Este repositório contém um framework de automação de testes de ponta a ponta (E2E) robusto e escalável, utilizando **Playwright** com **TypeScript**, estruturado sob o conceito de **BDD (Behavior Driven Development)** com **Cucumber**.
+This repository contains a robust and scalable End-to-End (E2E) test automation framework utilizing **Playwright** with **TypeScript**, structured under the **BDD (Behavior Driven Development)** concept with **Cucumber**.
 
-O projeto foi desenhado seguindo as melhores práticas de engenharia de software, garantindo manutenção simplificada, execução eficiente e relatórios detalhados.
-
----
-
-## 🏗️ Arquitetura e Tecnologias
-
-O framework utiliza as seguintes tecnologias e padrões:
-
-* **Linguagem:** [TypeScript](https://www.typescriptlang.org/) (Tipagem forte e maior segurança no código).
-* **Engine de Testes:** [Playwright](https://playwright.dev/) (Execução rápida e confiável em múltiplos browsers).
-* **BDD:** [Cucumber / @playwright-bdd](https://cucumber.io/) (Escrita de cenários em Gherkin para melhor colaboração).
-* **Padrão de Projeto:** **POM (Page Object Model)** para desacoplar a lógica da aplicação dos scripts de teste.
-* **Massa de Dados:** Gerenciamento via variáveis de ambiente com `.env`.
-* **Relatórios:** **Allure Report** para dashboards visuais e detalhados.
+The project was designed following software engineering best practices, ensuring simplified maintenance, efficient execution, and detailed reporting.
 
 ---
 
-## 🚀 Funcionalidades Principais
+## 🏗️ Architecture and Technologies
 
-### 🔧 Configuração Global (Setup & Teardown)
-Implementação de `global-setup` e `global-teardown` para melhor controle do ciclo de vida dos testes, permitindo:
-* Autenticação única (State Storage) para evitar logins repetitivos.
-* Limpeza de massa de dados ou logs antes/após a execução da suite.
+The framework utilizes the following technologies and patterns:
 
-### 🌐 Execução Multi-Browser
-Configuração avançada no `playwright.config.ts` para suporte nativo a:
+* **Language:** [TypeScript](https://www.typescriptlang.org/) (Strong typing and enhanced code security).
+* **Test Engine:** [Playwright](https://playwright.dev/) (Fast and reliable execution across multiple browsers).
+* **BDD:** [Cucumber / @playwright-bdd](https://cucumber.io/) (Scenario writing in Gherkin for better collaboration).
+* **Design Pattern:** **POM (Page Object Model)** to decouple application logic from test scripts.
+* **Data Management:** Managed via environment variables using `.env`.
+* **Reporting:** **Allure Report** for visual and detailed dashboards.
+
+---
+
+## 🚀 Key Features
+
+### 🔧 Global Configuration (Setup & Teardown)
+Implementation of `global-setup` and `global-teardown` for better lifecycle control of the test suite, allowing:
+* **Single Authentication (State Storage):** Avoids repetitive logins by reusing session states.
+* **Data Cleanup:** Automated management of test data or logs before and after suite execution.
+
+### 🌐 Multi-Browser Execution
+Advanced configuration in `playwright.config.ts` for native support of:
 * **Chromium**
 * **Firefox**
 * **Edge**
 
-### 📊 Relatórios Dinâmicos
-Integração completa com o **Allure Report**, capturando screenshots, vídeos e logs detalhados de cada passo executado nos cenários Gherkin.
+### 📊 Dynamic Reporting
+Full integration with **Allure Report**, capturing screenshots, videos, and detailed logs for every step executed within Gherkin scenarios.
 
-### 🔐 Gerenciamento de Ambientes
-Uso de arquivos `.env` para proteger dados sensíveis e facilitar a troca de contextos (Dev, Homologação, Produção) sem alterar o código fonte.
+### 🔐 Environment Management
+Usage of `.env` files to protect sensitive data and facilitate seamless switching between environments (Dev, Staging, Production) without modifying the source code.
 
 ---
 
-## 🛠️ Como Executar o Projeto
+## 🛠️ How to Run the Project
 
-### 1. Pré-requisitos
-* Node.js (v18 ou superior)
-* NPM ou Yarn
+### 1. Prerequisites
+* Node.js (v18 or higher)
+* NPM or Yarn
 
-### 2. Instalação
+### 2. Installation
 ```bash
-# Clone o repositório
-git clone [https://github.com/Brunocruiz/automation_playwright_agendamento](https://github.com/Brunocruiz/automation_playwright_agendamento.git)
+# Clone the repository
+git clone [https://github.com/Brunocruiz/automation_playwright_agendamento.git](https://github.com/Brunocruiz/automation_playwright_agendamento.git)
 
-# Entre na pasta
-cd seu-repositorio
+# Enter the directory
+cd your-repository-name
 
-# Instale as dependências
+# Install dependencies
 npm install
 
-# Instale os browsers do Playwright
+# Install Playwright browsers
 npx playwright install
-
-# Rode o comando npm
-npm run test:login
